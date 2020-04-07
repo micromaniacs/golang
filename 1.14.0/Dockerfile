@@ -40,6 +40,8 @@ COPY --from=build /go/bin/micro /bin/micro
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache \
+      build-base \
+      gcc \
       protobuf \
       git \
       make
