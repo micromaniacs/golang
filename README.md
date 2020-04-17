@@ -20,6 +20,7 @@ Based on Linux Alpine
 | Make                                                          | GNU Make                             |
 
 ## Example usage
+Using `docker-compose`:
 ```yaml
 version: '3.7'
 
@@ -37,6 +38,11 @@ services:
 networks:
   internal:
     external: false
+```
+
+...or:
+```
+$ docker run --rm -i -t -v `pwd`:`pwd` -w `pwd` micromaniacs/golang sh
 ```
 
 ## License
