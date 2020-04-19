@@ -43,5 +43,6 @@ RUN apk update \
       build-base \
       gcc \
       protobuf \
+      protobuf-dev \
       git \
       make

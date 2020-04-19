@@ -8,16 +8,17 @@ Based on Linux Alpine
 [![Docker Stars](https://img.shields.io/docker/stars/micromaniacs/golang)](https://hub.docker.com/r/micromaniacs/golang)
 
 ## Includes
-| Tool                                                          | Description                          |
-|---------------------------------------------------------------|--------------------------------------|
-| [ginkgo](https://github.com/onsi/ginkgo)                      | BDD testing framework                |
-| [golangci](https://github.com/golangci/golangci-lint)         | Golang linter                        |
-| [protobuf](https://github.com/protocolbuffers/protobuf)       | Protocol buffers                     |
-| [protoc-gen-go](https://github.com/golang/protobuf)           | Protobuf code generation for go      |
-| [protoc-gen-micro](https://github.com/micro/protoc-gen-micro) | Protobuf code generation for micro   |
-| [micro](https://github.com/micro/micro)                       | A Micro services runtime environment |
-| Git                                                           | In Linus we trust!                   |
-| Make                                                          | GNU Make                             |
+| Tool                                                          | Description                                                                                                                                   |
+|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| [ginkgo](https://github.com/onsi/ginkgo)                      | BDD testing framework                                                                                                                         |
+| [golangci](https://github.com/golangci/golangci-lint)         | Golang linter                                                                                                                                 |
+| [protobuf](https://github.com/protocolbuffers/protobuf)       | Protocol buffers                                                                                                                              |
+| protobuf-dev                                                  | Includes [well known types](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) (see /usr/include/google/protobuf) |
+| [protoc-gen-go](https://github.com/golang/protobuf)           | Protobuf code generation for go                                                                                                               |
+| [protoc-gen-micro](https://github.com/micro/protoc-gen-micro) | Protobuf code generation for micro                                                                                                            |
+| [micro](https://github.com/micro/micro)                       | A Micro services runtime environment                                                                                                          |
+| Git                                                           | In Linus we trust!                                                                                                                            |
+| Make                                                          | GNU Make                                                                                                                                      |
 
 ## Example usage
 Using `docker-compose`:
