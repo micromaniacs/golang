@@ -18,9 +18,9 @@ RUN apk update \
     # Protobuf code generation for micro
     && go get -u github.com/micro/protoc-gen-micro/v2@v2.0.0 \
     # A Micro services runtime environment
-    && export MICRO=micro-v2.2.0-linux-amd64.tar.gz \
+    && export MICRO=micro-v2.5.0-linux-amd64.tar.gz \
     && cd /tmp \
-    && wget https://github.com/micro/micro/releases/download/v2.2.0/$MICRO \
+    && wget https://github.com/micro/micro/releases/download/v2.5.0/$MICRO \
     && tar zxvpf $MICRO \
     && mv ./micro /go/bin/micro
 
