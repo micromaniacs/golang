@@ -1,7 +1,7 @@
 FROM golang:1.14.0-alpine3.11 AS build
 
-ENV XDG_CACHE_HOME /tmp/go-build
-ENV GO111MODULE on
+ENV XDG_CACHE_HOME=/tmp/go-build \
+    GO111MODULE=on
 
 # First we need to build all development tools
 RUN apk update \
@@ -27,25 +27,27 @@ RUN apk update \
     && tar zxvpf $MICRO \
     && mv ./micro /go/bin/micro \
     && upx -9 \
-        /bin/ginkgo \
-        /bin/golangci-lint \
-        /bin/protoc-gen-go \
-        /bin/protoc-gen-micro \
-        /bin/protoc-gen-swagger
+        /go/bin/ginkgo \
+        /go/bin/golangci-lint \
+        /go/bin/protoc-gen-go \
+        /go/bin/protoc-gen-micro \
+        /go/bin/protoc-gen-swagger
 
 # And finally build our image
 FROM golang:1.14.0-alpine3.11
 
-ENV CGO_ENABLED 0
-ENV XDG_CACHE_HOME /tmp/go-build
-ENV GO111MODULE on
+ENV CGO_ENABLED=0 \
+    XDG_CACHE_HOME=/tmp/go-build \
+    GO111MODULE=on
 
-COPY --from=build /go/bin/ginkgo /bin/ginkgo
-COPY --from=build /go/bin/golangci-lint /bin/golangci-lint
-COPY --from=build /go/bin/protoc-gen-go /bin/protoc-gen-go
-COPY --from=build /go/bin/protoc-gen-micro /bin/protoc-gen-micro
-COPY --from=build /go/bin/protoc-gen-swagger /bin/protoc-gen-swagger
-COPY --from=build /go/bin/micro /bin/micro
+COPY --from=build \
+    /go/bin/ginkgo \
+    /go/bin/golangci-lint \
+    /go/bin/protoc-gen-go \
+    /go/bin/protoc-gen-micro \
+    /go/bin/protoc-gen-swagger \
+    /go/bin/micro \
+    /bin/
 
 RUN apk update \
     && apk upgrade \
