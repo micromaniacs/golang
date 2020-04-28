@@ -7,8 +7,9 @@ ENV GO111MODULE on
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache \
-        git \
         curl \
+        git \
+        upx \
     # BDD testing framework
     && go get -u github.com/onsi/ginkgo/ginkgo@v1.12.0 \
     # Golang linter
@@ -24,7 +25,13 @@ RUN apk update \
     && cd /tmp \
     && wget https://github.com/micro/micro/releases/download/v2.5.0/$MICRO \
     && tar zxvpf $MICRO \
-    && mv ./micro /go/bin/micro
+    && mv ./micro /go/bin/micro \
+    && upx -9 \
+        /bin/ginkgo \
+        /bin/golangci-lint \
+        /bin/protoc-gen-go \
+        /bin/protoc-gen-micro \
+        /bin/protoc-gen-swagger
 
 # And finally build our image
 FROM golang:1.14.1-alpine3.11
