@@ -45,7 +45,8 @@ RUN apk update \
     && apk add --no-cache \
       build-base \
       gcc \
+      git \
+      make \
       protobuf \
       protobuf-dev \
-      git \
-      make
+      upx

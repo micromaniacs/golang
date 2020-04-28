@@ -20,6 +20,7 @@ Based on Linux Alpine
 | [micro](https://github.com/micro/micro)                       | A Micro services runtime environment                                                                                                          |
 | Git                                                           | In Linus we trust!                                                                                                                            |
 | Make                                                          | GNU Make                                                                                                                                      |
+| [upx](https://upx.github.io/)                                 | The Ultimate Packer for eXecutables                                                                                                           |
 
 ## Example usage
 Using `docker-compose`:
