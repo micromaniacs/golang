@@ -16,7 +16,7 @@ RUN apk update \
     # Protobuf code generation for go
     && go get -u github.com/golang/protobuf/protoc-gen-go@v1.4.0 \
     # Protobuf code generation for micro
-    && go get -u github.com/micro/protoc-gen-micro/v2@v2.0.0 \
+    && go get -u github.com/micro/protoc-gen-micro/v2@v2.3.0 \
     # Generate swagger from proto
     && go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger@v1.14.4 \
     # A Micro services runtime environment
