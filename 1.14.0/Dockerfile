@@ -12,7 +12,7 @@ RUN apk update \
     # BDD testing framework
     && go get -u github.com/onsi/ginkgo/ginkgo@v1.12.0 \
     # Golang linter
-    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.23.7 \
+    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.25.1 \
     # Protobuf code generation for go
     && go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.5 \
     # Protobuf code generation for micro
