@@ -16,6 +16,7 @@ Based on Linux Alpine
 | protobuf-dev                                                  | Includes [well known types](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf) (see /usr/include/google/protobuf) |
 | [protoc-gen-go](https://github.com/golang/protobuf)           | Protobuf code generation for go                                                                                                               |
 | [protoc-gen-micro](https://github.com/micro/protoc-gen-micro) | Protobuf code generation for micro                                                                                                            |
+| [protoc-gen-swagger](github.com/grpc-ecosystem/grpc-gateway)  | Generate swagger from .proto files                                                                                                            |
 | [micro](https://github.com/micro/micro)                       | A Micro services runtime environment                                                                                                          |
 | Git                                                           | In Linus we trust!                                                                                                                            |
 | Make                                                          | GNU Make                                                                                                                                      |

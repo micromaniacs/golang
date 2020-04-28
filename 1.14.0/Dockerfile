@@ -17,6 +17,8 @@ RUN apk update \
     && go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.5 \
     # Protobuf code generation for micro
     && go get -u github.com/micro/protoc-gen-micro/v2@v2.0.0 \
+    # Generate swagger from proto
+    && go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger@v1.14.4 \
     # A Micro services runtime environment
     && export MICRO=micro-v2.5.0-linux-amd64.tar.gz \
     && cd /tmp \
@@ -35,6 +37,7 @@ COPY --from=build /go/bin/ginkgo /bin/ginkgo
 COPY --from=build /go/bin/golangci-lint /bin/golangci-lint
 COPY --from=build /go/bin/protoc-gen-go /bin/protoc-gen-go
 COPY --from=build /go/bin/protoc-gen-micro /bin/protoc-gen-micro
+COPY --from=build /go/bin/protoc-gen-swagger /bin/protoc-gen-swagger
 COPY --from=build /go/bin/micro /bin/micro
 
 RUN apk update \
