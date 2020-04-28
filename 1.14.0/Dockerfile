@@ -14,7 +14,7 @@ RUN apk update \
     # Golang linter
     && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.25.1 \
     # Protobuf code generation for go
-    && go get -u github.com/golang/protobuf/protoc-gen-go@v1.3.5 \
+    && go get -u github.com/golang/protobuf/protoc-gen-go@v1.4.0 \
     # Protobuf code generation for micro
     && go get -u github.com/micro/protoc-gen-micro/v2@v2.0.0 \
     # Generate swagger from proto
